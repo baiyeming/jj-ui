@@ -4,19 +4,24 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: 'JJ-UI',
   description: 'this is a vue component libary',
+  rewrites: {
+    'docs/(.*)': '(.*)',
+    'packages/jj-ui/src/:comp/(.*)': 'components/:comp/(.*)',
+  },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' },
+      { text: '首页', link: '/' },
+      { text: '介绍', link: '/introduce' },
+      { text: '组件', link: '/components/' },
+      { text: '工具', link: '/utils' },
     ],
 
     sidebar: [
       {
-        text: 'Examples',
+        text: '组件',
         items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' },
+          { text: '按钮', link: '/components/button/index.md' },
         ],
       },
     ],
